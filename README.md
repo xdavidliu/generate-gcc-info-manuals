@@ -1,0 +1,1 @@
+# generate-gcc-info-manuals
