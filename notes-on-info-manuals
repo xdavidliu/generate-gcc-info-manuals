@@ -1,0 +1,10 @@
+These are a bunch of other notes on the info program that I wrote in google keep; not sure where else to put them so I'll just dump them here:
+
+ugh, info standalone and info emacs are broken
+For GUI emacs, sometimes it says something about magit-popup if you try to go to the manual for *Info*. I encountered this once in the company back in summer 2019, and also again thanksgiving break. The solution is to just do package-initialize, and then it goes away.
+
+For standalone info, if you do info info, it doesn't work. Silly! Took me a while to find this: https://bugs.launchpad.net/ubuntu/+source/texinfo/+bug/1789298
+sudo apt install texinfo-doc-nonfree
+That solves it.
+
+note that info files are in /usr/share/info, in *.info.gz files. Note there's an update-info-dir command that's probably run as a hook, but it won't pick up stuff in _subdirectories_ of /usr/share/info. For that, either create simlinks or just directly run info on the .info.gz files.
